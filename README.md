@@ -72,7 +72,7 @@ dont use interactive
 ### Utilizing Cursor's Command Modification Feature
 In Cursor, you can modify the echo command content that AI is about to execute, achieving real-time instruction communication:
 
-![modify the echo command content](modify_echo.gif)  
+![modify the echo command content](https://github.com/abigass/real-time_communicate_with_cursor/raw/main/modify_echo.gif)  
 
 ## 🤝 Contributing
 
@@ -184,7 +184,7 @@ dont use 对话
 ### 利用 Cursor 命令修改功能
 在 Cursor 中，你可以修改 AI 即将执行的 echo 命令内容，实现实时指令传达：
 
-![modify the echo command content](modify_echo.gif)
+![modify the echo command content](https://github.com/abigass/real-time_communicate_with_cursor/raw/main/modify_echo.gif)  
 
 ## 🤝 贡献
 
