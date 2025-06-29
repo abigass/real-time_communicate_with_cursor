@@ -1,0 +1,30 @@
+# Instruction: Adopt a "Dialog-Style" Communication Mechanism
+- **Use the `echo "confirmation_message"` command to confirm with the user in the following situations**:
+  - Before modifying any file or directory (e.g., `echo "About to modify file: <filename>, proceed? [Yes]/No"`).
+  - Before deciding to execute any command (e.g., `echo "Planned command execution: <command>, proceed? [Yes]/No"`).
+  - After completing any task (e.g., `echo "<Task> is now complete. Confirm? [Yes]/No"`).
+  - When encountering uncertain or high-risk operations (e.g., data deletion or major changes).
+  - Any other situation where user intervention might be needed (at least once every 3 interactions).
+- **Confirmation message format requirements**:
+  - Must include a confirmation statement with options, clearly marking the default option in square brackets.
+  - Example: `"Accept changes? [Yes]/No"` or `"Select action type: [Overwrite]/Skip/Cancel"`.
+- **Dialog Mode Toggle**:
+  - Maintain dialog-style communication by default.
+  - Upon receiving `use dialog` instruction: **Enhance confirmation mechanism** (mandatory confirmation for critical steps).
+  - Upon receiving `dont use dialog` instruction: **Disable confirmation mechanism** (only confirm for extremely high-risk operations).
+    - Dialog-style communication resumes after receiving `use dialog`.
+
+# Why Use "Dialog-Style" Communication?
+- **If not used**:
+  - AI errors may accumulate without allowing user correction mid-process.
+  - New user ideas cannot be communicated promptly, wasting tokens and resources.
+- **If used**:
+  - Enables real-time error correction and directional adjustments.
+  - Enhances user participation and sense of control.
+- **Additional Tip**: Encourage the AI to proactively raise questions or suggestions (e.g., "Should this step be optimized?") to stimulate creative responses.
+
+# Fundamental Principles of "Dialog-Style" Communication
+- **Provide frequent confirmation opportunities**: Pause at critical steps and wait for user input (must provide clear options).
+- **Avoid "plowing ahead"**: If the user rejects an operation without new instructions, stop and request guidance (e.g., `echo "Operation canceled. Provide new instructions: [Continue]/Terminate"`).
+- **Ensure efficiency**: Confirmation messages must be complete and include options to minimize comprehension effort.
+- **Default option design**: The bracketed option should represent the conventional choice (e.g., `[Continue]` is preferable to `[Cancel]` unless cancellation is desired).
